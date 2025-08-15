@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AkaiAsashin — Musik</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/png" href="profil.png">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="profil.png" alt="AkaiAsashin Logo" class="logo" />
+        <span class="name">AkaiAsashin</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Hauptnavigation">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-list">☰</button>
+        <ul id="nav-list" class="nav-list" role="menubar">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="youtube.html">YouTube</a></li>
+          <li><a href="twitch.html">Twitch</a></li>
+          <li><a href="music.html" class="active">Musik</a></li>
+          <li><a href="apps.html">Apps</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Musik</h1>
+    <p>Tracks und Sound-Demos.</p>
+
+    <div class="music-list">
+      <div class="track">
+        <!-- SoundCloud-Embed (von dir geliefert) -->
+        <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"
+          src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1395452866&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true">
+        </iframe>
+        <div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
+          <a href="https://soundcloud.com/akaiasashin" title="AkaiAsashin" target="_blank" style="color: #cccccc; text-decoration: none;">AkaiAsashin</a>
+          ·
+          <a href="https://soundcloud.com/akaiasashin/der-weg-des-weihnachtsmannes" title="Der Weg des Weihnachtsmannes" target="_blank" style="color: #cccccc; text-decoration: none;">Der Weg des Weihnachtsmannes</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer container">
+    <p>© <span id="year"></span> AkaiAsashin</p>
+    <p class="milk-note">Pro-Tipp: Die besten Hooks "abmelken" und als Loops verwenden. 🥛</p>
+  </footer>
+
+  <script src="common.js"></script>
+</body>
+</html>

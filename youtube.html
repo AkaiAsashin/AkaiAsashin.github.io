@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AkaiAsashin — YouTube</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/png" href="profil.png">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="profil.png" alt="AkaiAsashin Logo" class="logo" />
+        <span class="name">AkaiAsashin</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Hauptnavigation">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-list">☰</button>
+        <ul id="nav-list" class="nav-list" role="menubar">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="youtube.html" class="active">YouTube</a></li>
+          <li><a href="twitch.html">Twitch</a></li>
+          <li><a href="music.html">Musik</a></li>
+          <li><a href="apps.html">Apps</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>YouTube</h1>
+    <p>Hier deine Videos / Playlists.</p>
+
+    <div class="video-wrap">
+      <!-- VIDEO_ID ersetzen -->
+      <iframe width="100%" height="480"
+        src="https://www.youtube.com/embed/1uNQwpSCEnQ"
+        title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+    </div>
+  </main>
+
+  <footer class="site-footer container">
+    <p>© <span id="year"></span> AkaiAsashin</p>
+    <p class="milk-note">Für Content-Management: Wenn nötig, wird der Kanal "abgemolken" und nur die besten Clips bleiben. 🥛</p>
+  </footer>
+
+  <script src="common.js"></script>
+</body>
+</html>

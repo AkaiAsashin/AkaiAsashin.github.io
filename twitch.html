@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AkaiAsashin — Twitch</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/png" href="profil.png">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="profil.png" alt="AkaiAsashin Logo" class="logo" />
+        <span class="name">AkaiAsashin</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Hauptnavigation">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-list">☰</button>
+        <ul id="nav-list" class="nav-list" role="menubar">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="youtube.html">YouTube</a></li>
+          <li><a href="twitch.html" class="active">Twitch</a></li>
+          <li><a href="music.html">Musik</a></li>
+          <li><a href="apps.html">Apps</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+<main class="container main-twitch">
+  <section class="twitch-player">
+    <div class="player-and-chat">
+      
+      <!-- Player -->
+      <div class="stream-frame">
+        <iframe
+          src="https://player.twitch.tv/?channel=akaiasashin&parent=localhost"
+          frameborder="0"
+          allowfullscreen="true"
+          scrolling="no">
+        </iframe>
+      </div>
+
+      <!-- Chat -->
+      <div class="twitch-chat">
+        <iframe
+          src="https://www.twitch.tv/embed/akaiasashin/chat?parent=localhost"
+          frameborder="0"
+          scrolling="no">
+        </iframe>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+
+
+
+  <footer class="site-footer container">
+    <p>© <span id="year"></span> AkaiAsashin</p>
+    <p class="milk-note">Stream-Hinweis: Archiv-Highlights "abpumpen" und als Clips bereitstellen — melken erlaubt. 🥛</p>
+  </footer>
+
+  <script src="common.js"></script>
+  <script>
+    // === Twitch large embed ===
+    const TWITCH_CHANNEL = 'akaiasashin'; // <-- ersetzen
+    (function(){
+      const iframe = document.getElementById('twitch-embed-full');
+      if (!iframe) return;
+      if (!TWITCH_CHANNEL || TWITCH_CHANNEL === 'YOUR_TWITCH_CHANNEL') {
+        iframe.src = 'about:blank';
+        return;
+      }
+      const host = window.location.hostname || 'localhost';
+      const parent = host === '' ? 'localhost' : host;
+      iframe.src = `https://player.twitch.tv/?channel=${encodeURIComponent(TWITCH_CHANNEL)}&parent=${encodeURIComponent(parent)}&muted=false`;
+    })();
+  </script>
+</body>
+</html>
