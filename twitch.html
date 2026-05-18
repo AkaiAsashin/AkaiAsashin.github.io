@@ -29,30 +29,31 @@
   </header>
 
 <main class="container main-twitch">
-  <section class="twitch-player">
-    <div class="player-and-chat">
-      
-      <!-- Player -->
-      <div class="stream-frame">
-        <iframe
-          src="https://player.twitch.tv/?channel=akaiasashin&parent=AkaiAsashin.github.io"
-          frameborder="0"
-          allowfullscreen="true"
-          scrolling="no">
-        </iframe>
+  <section class="home-hero">
+      <div class="hero-center">
+        <h1 class="hero-title">Twitch</h1>
+        <p class="lead">Ich bin live manchmal</p>
       </div>
-
-      <!-- Chat -->
-      <div class="twitch-chat">
-        <iframe
-          src="https://www.twitch.tv/embed/akaiasashin/chat?parent=AkaiAsashin.github.io"
-          frameborder="0"
-          scrolling="no">
-        </iframe>
-      </div>
-
+    </section>
+  <div class="stream-and-chat">
+    <div class="stream-frame large">
+      <iframe
+        id="twitch-embed-full"
+        src="about:blank"
+        frameborder="0"
+        allowfullscreen="true"
+        scrolling="no">
+      </iframe>
     </div>
-  </section>
+    <div class="twitch-chat-frame">
+      <iframe
+        id="twitch-chat-full"
+        src="about:blank"
+        frameborder="0"
+        scrolling="yes">
+      </iframe>
+    </div>
+  </div>
 </main>
 
 

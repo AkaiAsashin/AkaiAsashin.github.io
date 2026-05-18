@@ -83,3 +83,38 @@
   });
 
 })();
+(function(){
+  const iframe = document.getElementById('twitch-embed-home');
+  const chat   = document.getElementById('twitch-chat-home');
+  if (!TWITCH_CHANNEL || TWITCH_CHANNEL === 'YOUR_TWITCH_CHANNEL') {
+    if (iframe) iframe.src = 'about:blank';
+    if (chat)   chat.src   = 'about:blank';
+    return;
+  }
+  const host   = window.location.hostname || 'localhost';
+  const parent = host === '' ? 'localhost' : host;
+  if (iframe) {
+    iframe.src = `https://player.twitch.tv/?channel=${encodeURIComponent(TWITCH_CHANNEL)}&parent=${encodeURIComponent(parent)}&muted=true`;
+  }
+  if (chat) {
+    chat.src = `https://www.twitch.tv/embed/${encodeURIComponent(TWITCH_CHANNEL)}/chat?parent=${encodeURIComponent(parent)}&darkpopout`;
+  }
+})();
+const TWITCH_CHANNEL = 'akaiasashin';
+(function(){
+  const player = document.getElementById('twitch-embed-full');
+  const chat   = document.getElementById('twitch-chat-full');
+  if (!TWITCH_CHANNEL || TWITCH_CHANNEL === 'YOUR_TWITCH_CHANNEL') {
+    if (player) player.src = 'about:blank';
+    if (chat)   chat.src   = 'about:blank';
+    return;
+  }
+  const host   = window.location.hostname || 'localhost';
+  const parent = host === '' ? 'localhost' : host;
+  if (player) {
+    player.src = `https://player.twitch.tv/?channel=${encodeURIComponent(TWITCH_CHANNEL)}&parent=${encodeURIComponent(parent)}&muted=false`;
+  }
+  if (chat) {
+    chat.src = `https://www.twitch.tv/embed/${encodeURIComponent(TWITCH_CHANNEL)}/chat?parent=${encodeURIComponent(parent)}&darkpopout`;
+  }
+})();

@@ -11,85 +11,107 @@
 }
 *{box-sizing:border-box}
 html,body{height:100%}
-html {
-  min-height: 100%;
-  background: linear-gradient(180deg, var(--bg), #300700) fixed;
-}
-body {
-  margin: 0;
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-  background: transparent; /* wichtig: damit nicht neu beginnt */
-  color: var(--text);
-  -webkit-font-smoothing: antialiased;
-}
+html{min-height:100%;background:linear-gradient(180deg,var(--bg),#300700) fixed}
+body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;background:transparent;color:var(--text);-webkit-font-smoothing:antialiased}
 .container{max-width:var(--max-width);margin:0 auto;padding:1rem}
-.site-header{position:sticky;top:0;z-index:40;backdrop-filter: blur(6px);background: linear-gradient(180deg, rgba(6,10,15,0.6), rgba(6,10,15,0.25));border-bottom:1px solid rgba(255,255,255,0.03)}
+
+/* Header */
+.site-header{position:sticky;top:0;z-index:40;backdrop-filter:blur(6px);background:linear-gradient(180deg,rgba(6,10,15,0.6),rgba(6,10,15,0.25));border-bottom:1px solid rgba(255,255,255,0.03)}
 .header-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem}
 .brand{display:flex;align-items:center;gap:.75rem;color:var(--text);text-decoration:none}
-.logo{width:44px;height:44px;color:var(--accent)}
+.logo{width:44px;height:44px}
 .name{font-weight:700}
 .main-nav{position:relative}
 .nav-toggle{display:none;background:none;border:0;color:var(--text);font-size:1.1rem;padding:.2rem}
 .nav-list{display:flex;gap:.25rem;list-style:none;margin:0;padding:0}
 .nav-list a{display:inline-block;padding:.55rem .8rem;border-radius:8px;text-decoration:none;color:var(--muted)}
-.nav-list a.active, .nav-list a:hover{background:var(--glass);color:var(--text)}
-.main-home .home-hero{display:grid;grid-template-columns:1fr 420px;gap:1rem;align-items:center;margin:2rem 0}
-.hero-center{text-align:left}
+.nav-list a.active,.nav-list a:hover{background:var(--glass);color:var(--text)}
+
+/* Home Hero */
+.main-home .home-hero{text-align:center;margin:2rem 0 1.5rem}
 .hero-title{margin:0;font-size:2.1rem}
 .lead{color:var(--muted);margin-top:.5rem}
-.stream-frame{background:rgba(255,255,255,0.02);border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,0.03)}
-.stream-frame.small iframe{width:100%;height:240px}
-.stream-caption{color:var(--muted);font-size:.9rem;margin-top:.5rem}
-.page{padding-bottom:2rem}
-.video-wrap{margin-top:1rem;aspect-ratio:16/9;overflow:hidden;border:1px solid rgba(255,255,255,0.03)}
-.stream-grid{display:grid;grid-template-columns: 1fr 300px; gap:1rem;align-items:start}
-.channel-info{background:var(--card);padding:1rem;border-radius:8px;border:1px solid rgba(255,255,255,0.02)}
+
+/* Stream + Chat (Home & Twitch) */
+.stream-and-chat{
+  display:flex;
+  justify-content:center;
+  align-items:stretch;
+  gap:12px;
+  width:100%;
+  height:75vh;
+  margin:0 auto 2rem;
+}
+.stream-and-chat .stream-frame{
+  flex:3;
+  min-width:0;
+  background:rgba(255,255,255,0.02);
+  border-radius:var(--radius);
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,0.05);
+}
+.stream-and-chat .stream-frame iframe{
+  width:100%;
+  height:100%;
+  display:block;
+}
+.twitch-chat-frame{
+  flex:1;
+  min-width:300px;
+  max-width:340px;
+  background:rgba(255,255,255,0.02);
+  border-radius:var(--radius);
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,0.05);
+}
+.twitch-chat-frame iframe{
+  width:100%;
+  height:100%;
+  display:block;
+}
+
+/* YouTube */
+.video-wrap{
+  margin-top:1rem;
+  position:relative;
+  width:100%;
+  aspect-ratio:16/9;
+  overflow:hidden;
+  border-radius:var(--radius);
+  border:1px solid rgba(255,255,255,0.05);
+}
+.video-wrap iframe{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+}
+
+/* Musik */
 .music-list .track{background:var(--card);padding:1rem;margin-bottom:.75rem;border-radius:8px;border:1px solid rgba(255,255,255,0.02)}
+
+/* Apps */
 .apps-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;margin-top:1rem}
 .app-card{background:var(--card);padding:0;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,0.03)}
 .app-card img{display:block;width:100%;height:auto}
 .app-card h3{margin:.75rem .75rem 0 .75rem}
 .app-card p{margin:.5rem .75rem .75rem .75rem;color:var(--muted)}
-.btn{display:inline-block;padding:.45rem .7rem;border-radius:6px;background:var(--accent);color:#042; text-decoration:none;font-weight:600}
+.btn{display:inline-block;padding:.45rem .7rem;border-radius:6px;background:var(--accent);color:#042;text-decoration:none;font-weight:600}
+
+/* Footer */
 .site-footer{border-top:1px solid rgba(255,255,255,0.02);padding:1.25rem 1rem;margin-top:2rem;color:var(--muted)}
 .milk-note{font-size:.9rem;color:var(--muted);margin-top:.5rem}
-.hero-stream {
-  margin-top: 20px;
-  display: flex;
-  justify-content: center;
-}
 
-.player-and-chat {
-  display: flex;
-  justify-content: center;
-  align-items: stretch; /* Chat gleich hoch wie Player */
-  gap: 15px;
-  height: 80vh; /* macht alles groß */
-}
+/* Sonstiges */
+.channel-info{background:var(--card);padding:1rem;border-radius:8px;border:1px solid rgba(255,255,255,0.02)}
+.page{padding-bottom:2rem}
 
-.stream-frame {
-  flex: 3; /* ca. 75% Breite */
-}
-
-.stream-frame iframe {
-  width: 100%;
-  height: 100%;
-}
-
-.twitch-chat {
-  flex: 1; /* ca. 25% Breite */
-}
-
-.twitch-chat iframe {
-  width: 100%;
-  height: 100%;
-}
-
-
-@media (max-width:900px){
-  .main-home .home-hero{grid-template-columns:1fr}
-  .stream-grid{grid-template-columns:1fr}
+/* Mobile */
+@media(max-width:900px){
   .nav-list{display:none;position:absolute;right:0;top:48px;background:var(--card);padding:.6rem;border-radius:8px;box-shadow:0 6px 18px rgba(0,0,0,0.6)}
   .nav-toggle{display:inline-block}
   .nav-list.show{display:flex;flex-direction:column;min-width:180px}
+  .stream-and-chat{flex-direction:column;height:auto}
+  .stream-and-chat .stream-frame{height:56vw}
+  .twitch-chat-frame{min-width:0;max-width:100%;height:400px}
 }
